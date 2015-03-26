@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8"/>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../src/jquery.validation.js"></script>
+</head>
+<body>
+	<div>
+		<div id="zzz"></div>
+	    <input type="button" id="submitbtn"  value="click me"/>
+	    <input type="text" id="username"/>
+	    <input type="text" id="password">
+	</div>
+
+	<script type="text/javascript">
+	    $(function() {
+	        $('#submitbtn').validator({
+	            show_error_div : 'zzz',
+	            output_error_msg: true,
+	            valid_obj : [['username','reg_max_length[4]'],['password','reg_url|reg_chinesechar']]
+	        });
+	    });
+    </script>
+</body>
+</html>
